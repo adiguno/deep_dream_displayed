@@ -10,6 +10,7 @@ matplotlib = "*"
 tensorflow = "*"
 pillow = "*"
 scipy = "*"
+opencv-python = "*"
 
 [requires]
 python_version = "3.5"
