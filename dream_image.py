@@ -49,7 +49,7 @@ def show_all_dream_image_layers(file_name = "test.jpg",show=True):
       img_result = np.clip(img_result, 0.0, 255.0)
       img_result = img_result.astype(np.uint8)
       result = PIL.Image.fromarray(img_result, mode='RGB')
-      result.save('{}_{}.jpg'.format(file_name[:-4], num))
+      result.save('{}_{}.png'.format(file_name[:-4], num))
       if show:
          result.show()
 
@@ -78,6 +78,6 @@ def show_dream_image_layer(file_name = "test.jpg", layer=3,show=True):
       result.show()
 
 if __name__ == "__main__":
-   show_dream_image_layer(layer=5)
+   show_all_dream_image_layers(show=False)
 
 
