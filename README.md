@@ -1,6 +1,6 @@
 # deep_dream_displayed
 Create DeepDream-like images and videos
-![Alt Text](test.gif)
+![Alt Text](test_still.gif)
 ![Alt Text](test_zoom_in.gif)
 
 
