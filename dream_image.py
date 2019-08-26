@@ -27,7 +27,7 @@ from deepdreamer import model, load_image, recursive_optimize
 import numpy as np
 import PIL.Image
 
-def show_all_dream_image_layers(file_name = "test.jpg",show=True):
+def show_all_dream_image_layers(file_name = "test.png",show=True):
    """
    Args:   
       file_name: image to deep dream on
@@ -53,7 +53,7 @@ def show_all_dream_image_layers(file_name = "test.jpg",show=True):
       if show:
          result.show()
 
-def show_dream_image_layer(file_name = "test.jpg", layer=3,show=True):
+def show_dream_image_layer(file_name = "test.png", layer=3,show=True):
    """
    Args:
       file_name: image to deep dream on
@@ -73,7 +73,7 @@ def show_dream_image_layer(file_name = "test.jpg", layer=3,show=True):
    img_result = np.clip(img_result, 0.0, 255.0)
    img_result = img_result.astype(np.uint8)
    result = PIL.Image.fromarray(img_result, mode='RGB')
-   result.save('{}_{}.jpg'.format(file_name[:-4], layer))
+   result.save('{}_{}.png'.format(file_name[:-4], layer))
    if show:
       result.show()
 
