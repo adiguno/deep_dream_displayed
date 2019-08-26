@@ -8,7 +8,7 @@ import numpy as np
 import PIL.Image
 from deepdreamer import model, load_image, recursive_optimize
 
-def create_dream_frames(file_name = "test.png", target_dream_layer = 3, total_frames=5):
+def create_dream_frames(file_name = "test.png", target_dream_layer = 3, total_frames=5, zoom_in=False):
     """
     Args:
         file_name: orginal image file
@@ -21,6 +21,10 @@ def create_dream_frames(file_name = "test.png", target_dream_layer = 3, total_fr
     """
     curr_path = os.getcwd()
     dream_frames_path = os.path.join(curr_path, 'dream_frames')
+    # zoom-in effect directory
+    if zoom_in:
+        dream_frames_path = dream_frames_path + '_zoom_in'
+
     # check and create '/dream_frames' directory
     if not os.path.exists(dream_frames_path):
         os.mkdir(dream_frames_path)
@@ -46,9 +50,16 @@ def create_dream_frames(file_name = "test.png", target_dream_layer = 3, total_fr
     # generates the frames
     for i in range(total_frames-1):
         img_result = load_image(filename='{}{}.png'.format(img_path[:-5], i))
-        
-        img_result = np.clip(img_result, 0.0, 255.0)
-        img_result = img_result.astype(np.uint8)
+        if zoom_in:
+            x_trim = 1
+            y_trim = 1
+            img_result = img_result[0+x_trim:y_size-y_trim, 0+y_trim:x_size-x_trim]
+            img_result = cv2.resize(img_result, (x_size, y_size))
+            img_result[:, :, 0] += 3  # reds
+            img_result[:, :, 1] += 3  # greens
+            img_result[:, :, 2] += 3  # blues
+            img_result = np.clip(img_result, 0.0, 255.0)
+            img_result = img_result.astype(np.uint8)
         img_result = recursive_optimize(layer_tensor=dream_layer_tensor,
                                         image=img_result,
                                         num_iterations=15,
@@ -100,5 +111,5 @@ def create_dream_video(file_name = "test.png",
 
 
 if __name__ == "__main__":
-    img_dir, file_name = create_dream_frames(target_dream_layer=3)
-    create_dream_video(img_dir=img_dir)
+    img_dir, file_name = create_dream_frames(target_dream_layer=3,total_frames=10,zoom_in=True)
+    create_dream_video(img_dir=img_dir,total_frames=10)
