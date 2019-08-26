@@ -40,7 +40,7 @@ To generate dream videos, use ```dream_to_vid.py```
 ```
 create_dream_frames(file_name='test.png', target_dream_layer=3, total_frames=10,zoom_in=True)
 ```
-
+2. Use the generated frames and write to a video file and run
 
 ## Built with
 python 3.5
@@ -50,5 +50,5 @@ python 3.5
 * [scipy](https://pypi.org/project/scipy/)
 * [OpenCV](https://pypi.org/project/opencv-python/)
 * [DeepDream](https://github.com/Hvass-Labs/TensorFlow-Tutorials/blob/master/14_DeepDream.ipynb)
-* [MoviePy] (https://pypi.org/project/moviepy/)
+* [MoviePy](https://pypi.org/project/moviepy/)
 
