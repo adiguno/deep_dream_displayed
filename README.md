@@ -2,7 +2,7 @@
 Create DeepDream-like images and videos
 
 
-## Getting Started
+## Getting Started with the Virtual Environment - Pipenv
 Installing Pipenv:
 ```
 pip install pipenv
@@ -18,7 +18,7 @@ python [file_name]
 ```
 
 ## todo
- - [ ] local code to github
+ - [x] local code to github
 
 ## Built with
 python 3.5
@@ -26,4 +26,6 @@ python 3.5
 * [matplotlib](https://pypi.org/project/matplotlib/) 
 * [tensorflow](https://www.tensorflow.org/)
 * [scipy](https://pypi.org/project/scipy/)
+* [OpenCV](https://pypi.org/project/opencv-python/)
 * [DeepDream](https://github.com/Hvass-Labs/TensorFlow-Tutorials/blob/master/14_DeepDream.ipynb)
+
