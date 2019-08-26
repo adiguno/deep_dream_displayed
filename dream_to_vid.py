@@ -51,8 +51,8 @@ def create_dream_frames(file_name = "test.png", target_dream_layer = 3, total_fr
     for i in range(total_frames-1):
         img_result = load_image(filename='{}{}.png'.format(img_path[:-5], i))
         if zoom_in:
-            x_trim = 1
-            y_trim = 1
+            x_trim = 10
+            y_trim = 10
             img_result = img_result[0+x_trim:y_size-y_trim, 0+y_trim:x_size-x_trim]
             img_result = cv2.resize(img_result, (x_size, y_size))
             img_result[:, :, 0] += 3  # reds
