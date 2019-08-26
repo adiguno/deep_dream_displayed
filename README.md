@@ -1,6 +1,8 @@
 # deep_dream_displayed
 Create DeepDream-like images and videos
 ![Alt Text](test.gif)
+![Alt Text](test_zoom_in.gif)
+
 
 ## Getting Started with the Virtual Environment - Pipenv
 Installing Pipenv:
