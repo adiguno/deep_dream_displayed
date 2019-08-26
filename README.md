@@ -31,7 +31,8 @@ Then run the file in pipenv shell
 ```
 python dream_image.py
 ```
-More information about the different dream layers inside ```dream_image.py```
+More information about the different dream layers inside ```dream_image.py```. 
+Examples of different layers inside the ```test``` png images. 
 [More information about DeepDream](https://github.com/Hvass-Labs/TensorFlow-Tutorials/blob/master/14_DeepDream.ipynb)
 
 ## Dream Video
